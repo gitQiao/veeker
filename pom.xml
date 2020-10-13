@@ -54,6 +54,7 @@
         <module>veeker-redis</module>
         <module>veeker-resubmit</module>
         <module>veeker-mybatis</module>
+        <module>veeker-all</module>
     </modules>
 
     <!-- Jar 版本控制 -->
