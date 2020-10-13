@@ -15,6 +15,7 @@
 
     <name>veeker-all</name>
     <description>Veeker  Boot ALL package</description>
+    <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
         <dependency>

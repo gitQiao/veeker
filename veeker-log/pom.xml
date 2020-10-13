@@ -16,6 +16,7 @@
 
     <name>veeker-log</name>
     <description>Veeker Boot Log package</description>
+    <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
         <dependency>

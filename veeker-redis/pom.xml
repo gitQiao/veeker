@@ -16,6 +16,7 @@
 
     <name>veeker-redis</name>
     <description>Veeker Boot Redis package</description>
+    <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
         <!-- spring boot redis -->

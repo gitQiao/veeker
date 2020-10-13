@@ -15,6 +15,7 @@
 
     <name>veeker-core</name>
     <description>Veeker Boot Core package</description>
+    <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
         <!--spring-boot-starter-validation-->

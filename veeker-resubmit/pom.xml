@@ -15,6 +15,7 @@
 
     <name>veeker-resubmit</name>
     <description>Veeker Boot Resubmit package</description>
+    <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
         <!-- spring boot aop -->

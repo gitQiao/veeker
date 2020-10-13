@@ -15,6 +15,7 @@
 
     <name>veeker-mybatis</name>
     <description>Veeker Boot Mybatis package</description>
+    <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
         <!-- mybatis plus -->
