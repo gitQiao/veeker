@@ -74,10 +74,6 @@
         <cn.hutool.version>5.4.0</cn.hutool.version>
         <!-- google-guava -->
         <google-guava.version>24.1.1-jre</google-guava.version>
-        <!-- swagger2 -->
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
-        <!-- swagger2-ui -->
-        <swagger2-ui.version>1.9.3</swagger2-ui.version>
         <!-- jwt -->
         <jwt.version>3.8.3</jwt.version>
         <!-- mybatis-plus -->
@@ -98,18 +94,6 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${google-guava.version}</version>
-            </dependency>
-            <!--swagger2-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox-swagger2.version}</version>
-            </dependency>
-            <!--swagger2 ui包-->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>${swagger2-ui.version}</version>
             </dependency>
             <!-- jwt -->
             <dependency>
