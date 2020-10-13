@@ -1,0 +1,15 @@
+{
+  "properties": [
+    {
+      "name": "log.enabled",
+      "type": "java.lang.String",
+      "defaultValue": "true",
+      "description": "是否开启系统日志默认true."
+    },
+    {
+      "name": "log.level",
+      "type": "java.lang.String",
+      "defaultValue": "DEBUG",
+      "description": "系统日志默认输出级别  INFO/DEBUG."
+    }
+  ] }
