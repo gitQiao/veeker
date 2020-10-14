@@ -1,4 +1,4 @@
-package com.veeker.core.basics;
+package com.veeker.core.bean;
 
 import java.util.ArrayList;
 import java.util.List;

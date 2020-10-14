@@ -1,11 +1,11 @@
-package com.veeker.mybatis.bean;
+package com.veeker.core.bean;
 
 import java.util.List;
 
 /**
  * @author ：qiaoliang
  */
-public class PageInfo {
+public class Pageable {
     /** 每页显示的行数*/
     private int pageSize = 5;
 
@@ -14,10 +14,10 @@ public class PageInfo {
 
     private List<String> orders;
 
-    private PageInfo() {
+    private Pageable() {
     }
 
-    public PageInfo(int pageSize, int pageNumber, List<String> orders) {
+    public Pageable(int pageSize, int pageNumber, List<String> orders) {
         this.pageSize = pageSize;
         this.pageNumber = pageNumber;
         this.orders = orders;

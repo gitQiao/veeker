@@ -1,11 +1,11 @@
-package com.veeker.mybatis.bean;
+package com.veeker.core.bean;
 
 import java.util.List;
 
 /**
  * @author ：qiaoliang
  */
-public class PageBean<T> extends PageInfo {
+public class Page<T> extends Pageable {
     /** 存放  需要显示的 实体类数据*/
     private List<T> lists;
     /** 总页数*/
@@ -13,8 +13,8 @@ public class PageBean<T> extends PageInfo {
     /** 总行数*/
     private final int rows;
 
-    public PageBean(PageInfo pageInfo, Integer rows) {
-        super(pageInfo.getPageSize(), pageInfo.getPageNumber(), pageInfo.getOrders());
+    public Page(Pageable pageable, Integer rows) {
+        super(pageable.getPageSize(), pageable.getPageNumber(), pageable.getOrders());
         this.rows = rows;
         //页数      根据传入的 总行数 以及 每页显示的行数 求出总页数
         this.totalPage=rows % this.getPageSize()==0 ? rows/this.getPageSize() : (rows/this.getPageSize()+1);

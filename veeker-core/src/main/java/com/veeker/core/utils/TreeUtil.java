@@ -1,6 +1,6 @@
 package com.veeker.core.utils;
 
-import com.veeker.core.basics.TreeNode;
+import com.veeker.core.bean.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
