@@ -3,13 +3,12 @@ package com.veeker.mybatis.basic;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author ：qiaoliang
  */
-public abstract class BaseEntity<T extends Serializable,E> extends Entity<T> {
+public abstract class BaseEntity<T,E> extends Entity<T> {
 
     @TableField(fill = FieldFill.INSERT)
     private E createBy;

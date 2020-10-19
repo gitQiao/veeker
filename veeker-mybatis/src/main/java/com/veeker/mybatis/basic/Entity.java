@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * @author ：qiaoliang
  */
-public class Entity<T extends Serializable> {
+public class Entity<T> implements Serializable{
 
     private T id;
 
