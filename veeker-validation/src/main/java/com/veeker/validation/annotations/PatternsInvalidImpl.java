@@ -1,4 +1,4 @@
-package com.veeker.core.annotations;
+package com.veeker.validation.annotations;
 
 import com.veeker.core.utils.StringUtils;
 
@@ -8,9 +8,9 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * @author ：qiaoliang
  */
-public class BankCardInvalidImpl implements ConstraintValidator<BankCardInvalid,Object> {
+public class PatternsInvalidImpl implements ConstraintValidator<PatternsInvalid,Object> {
     @Override
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
-        return StringUtils.matchBankCard(o.toString().trim());
+        return StringUtils.matchDomain(o.toString().trim());
     }
 }

@@ -1,4 +1,4 @@
-package com.veeker.core.annotations;
+package com.veeker.validation.annotations;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -14,15 +14,15 @@ import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * 手机号约束
+ * 银行卡卡号约束
  *
  * @author ：qiaoliang
  */
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
-@Constraint(validatedBy= PhoneInvalidImpl.class)
-public @interface PhoneInvalid {
-    String message() default "国内手机号码格式不正确，请重新输入！";
+@Constraint(validatedBy= BankCardInvalidImpl.class)
+public @interface BankCardInvalid {
+    String message() default "银行卡卡号格式不正确，请重新输入！";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }

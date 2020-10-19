@@ -1,6 +1,7 @@
-package com.veeker.core.annotations;
+package com.veeker.validation.annotations;
 
-import com.veeker.core.utils.RegexUtils;
+
+import com.veeker.core.utils.StringUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -8,9 +9,9 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * @author ：qiaoliang
  */
-public class CharInvalidImpl implements ConstraintValidator<CharInvalid,Object> {
+public class IPInvalidImpl implements ConstraintValidator<IPInvalid,Object> {
     @Override
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
-        return RegexUtils.checkChar(o.toString().trim());
+        return StringUtils.matchIp(o.toString().trim());
     }
 }

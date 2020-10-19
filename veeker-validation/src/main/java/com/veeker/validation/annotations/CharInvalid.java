@@ -1,4 +1,4 @@
-package com.veeker.core.annotations;
+package com.veeker.validation.annotations;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

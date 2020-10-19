@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @author ：qiaoliang
  */
-public abstract class BaseEntity<T extends Serializable,E> extends BeanEntity<T> {
+public abstract class BaseEntity<T extends Serializable,E> extends Entity<T> {
 
     @TableField(fill = FieldFill.INSERT)
     private E createBy;
@@ -19,6 +19,7 @@ public abstract class BaseEntity<T extends Serializable,E> extends BeanEntity<T>
     private E updateBy;
     @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
+
     private String remark;
 
     public BaseEntity() {

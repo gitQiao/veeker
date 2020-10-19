@@ -55,6 +55,7 @@
         <module>veeker-resubmit</module>
         <module>veeker-mybatis</module>
         <module>veeker-all</module>
+        <module>veeker-validation</module>
     </modules>
 
     <!-- Jar 版本控制 -->

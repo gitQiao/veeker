@@ -1,4 +1,5 @@
-package com.veeker.core.annotations;
+package com.veeker.validation.annotations;
+
 
 import com.veeker.core.utils.StringUtils;
 
@@ -8,9 +9,9 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * @author ：qiaoliang
  */
-public class DomainInvalidImpl implements ConstraintValidator<DomainInvalid,Object> {
+public class EmailInvalidImpl implements ConstraintValidator<EmailInvalid,Object> {
     @Override
     public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
-        return StringUtils.matchDomain(o.toString().trim());
+        return StringUtils.matchEmail(o.toString().trim());
     }
 }

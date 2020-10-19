@@ -1,20 +1,18 @@
 package com.veeker.mybatis.basic;
 
-import com.veeker.core.basics.Entity;
-
 import java.io.Serializable;
 
 /**
  * @author ：qiaoliang
  */
-public class BeanEntity<T extends Serializable> implements Entity {
+public class Entity<T extends Serializable> {
 
     private T id;
 
-    public BeanEntity() {
+    public Entity() {
     }
 
-    public BeanEntity(T id) {
+    public Entity(T id) {
         this.id = id;
     }
 
@@ -22,8 +20,7 @@ public class BeanEntity<T extends Serializable> implements Entity {
         this.id = id;
     }
 
-    @Override
-    public Serializable getId() {
+    public T getId() {
         return id;
     }
 
