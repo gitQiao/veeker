@@ -211,7 +211,7 @@ public class RedisUtil implements AutoCloseable{
     public static void hashsSet(String key, Map<String, Object> map, long time){
         redisTemplate.opsForHash().putAll(key, map);
         if(time>0){
-            expire(key, time*60);
+            expire(key, time);
         }
     }
 
@@ -242,7 +242,7 @@ public class RedisUtil implements AutoCloseable{
     public static void hashsSet(String key,String item,Object value,long time) {
         redisTemplate.opsForHash().put(key, item, value);
         if(time>0){
-            expire(key, time*60);
+            expire(key, time);
         }
     }
 
@@ -296,6 +296,29 @@ public class RedisUtil implements AutoCloseable{
     }
 
     /**
+     *  获取hash表中的所有key
+     *
+     * @author ：qiaoliang
+     * @param key : key
+     * @return java.util.Set<java.lang.Object>
+     */
+    public static Set<Object> hashKeysAll(String key) {
+        return redisTemplate.opsForHash().keys(key);
+    }
+
+    /**
+     *  获取hash表中的所有value
+     *
+     * @author ：qiaoliang
+     * @param key : key
+     * @return java.util.List<java.lang.Object>
+     * @date 2020-10-19 16:57
+     */
+    public static List<Object> hashValusAll(String key) {
+        return redisTemplate.opsForHash().values(key);
+    }
+
+    /**
      * 根据key获取Set中的所有值
      *
      * @author ：qiaoliang
@@ -343,7 +366,7 @@ public class RedisUtil implements AutoCloseable{
     public static long setSetAndTime(String key,long time,Object...values) {
         Long count = redisTemplate.opsForSet().add(key, values);
         if(time>0) {
-            expire(key, time*60);
+            expire(key, time);
         }
         return isLong(count);
     }
@@ -429,7 +452,7 @@ public class RedisUtil implements AutoCloseable{
     public static void listSet(String key, Object value, long time) {
         redisTemplate.opsForList().rightPush(key, value);
         if (time > 0){
-            expire(key, time*60);
+            expire(key, time);
         }
     }
 
@@ -455,7 +478,7 @@ public class RedisUtil implements AutoCloseable{
     public static void listSet(String key, List<Object> value, long time) {
         redisTemplate.opsForList().rightPushAll(key, value);
         if (time > 0){
-            expire(key, time*60);
+            expire(key, time);
         }
     }
 
