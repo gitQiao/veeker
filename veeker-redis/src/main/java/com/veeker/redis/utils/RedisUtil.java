@@ -406,7 +406,9 @@ public class RedisUtil implements AutoCloseable{
     public static List<Object> listGet(String key,long start, long end){
         return redisTemplate.opsForList().range(key, start, end);
     }
-
+    public static List<Object> listGet(String key){
+        return listGet(key, 0, -1);
+    }
     /**
      * 获取list缓存的长度
      *
@@ -437,7 +439,7 @@ public class RedisUtil implements AutoCloseable{
      * @param key : 键
      * @param value : 值
      */
-    public static void listSet(String key, Object value) {
+    public static void listSingleSet(String key, Object value) {
         redisTemplate.opsForList().rightPush(key, value);
     }
 
@@ -449,7 +451,7 @@ public class RedisUtil implements AutoCloseable{
      * @param value : 值
      * @param time : 时间(秒)
      */
-    public static void listSet(String key, Object value, long time) {
+    public static void listSingleSet(String key, Object value, long time) {
         redisTemplate.opsForList().rightPush(key, value);
         if (time > 0){
             expire(key, time);

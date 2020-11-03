@@ -12,7 +12,7 @@ public interface IOperatorService {
      * @author ：qiaoliang
      * @return java.lang.String
      */
-     default String operator(){
+     default Object operator(){
          return "-";
      }
 
@@ -22,7 +22,7 @@ public interface IOperatorService {
      * @author ：qiaoliang
      * @return java.lang.String
      */
-    default String operatorType(){
+    default Object operatorType(){
         return "-";
     }
 

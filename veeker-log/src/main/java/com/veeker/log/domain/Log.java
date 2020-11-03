@@ -15,11 +15,11 @@ import java.util.Objects;
  */
 public class Log {
 
-    private String currUserId = "-";
+    private Object currUserId = "-";
     /**功能**/
     private String businessType;
     /**操作人类别**/
-    private String operatorType;
+    private Object operatorType;
     /**返回参数**/
     private Object outParam;
     /**请求参数**/
@@ -87,7 +87,7 @@ public class Log {
         this.setErrorCountent(exception.getMessage());
     }
 
-    public String getCurrUserId() {
+    public Object getCurrUserId() {
         return currUserId;
     }
 
@@ -100,15 +100,15 @@ public class Log {
         this.businessType = businessType;
     }
 
-    public String getOperatorType() {
+    public Object getOperatorType() {
         return operatorType;
     }
 
-    public void setOperatorType(String operatorType) {
+    public void setOperatorType(Object operatorType) {
         this.operatorType = operatorType;
     }
 
-    public void setCurrUserId(String currUserId) {
+    public void setCurrUserId(Object currUserId) {
         this.currUserId = currUserId;
     }
 
