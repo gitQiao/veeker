@@ -16,11 +16,6 @@
     <url>https://github.com/gitQiao/veeker</url>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!--spring-boot-starter-validation-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -60,7 +61,6 @@ public class JsonUtils {
         try {
             return Holder.MAPPER.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -77,7 +77,6 @@ public class JsonUtils {
         try {
             return Holder.MAPPER.readValue(json, clazz);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -95,7 +94,6 @@ public class JsonUtils {
         try {
             return Holder.MAPPER.readValue(json, javaType);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
             return null;
         }
     }

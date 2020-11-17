@@ -80,7 +80,9 @@
         <!-- mybatis-plus -->
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <!-- mysql -->
-        <mysql.version>5.1.46</mysql.version>
+        <mysql.version>5.1.47</mysql.version>
+        <!-- excel操作 -->
+        <easypoi.version>4.2.0</easypoi.version>
     </properties>
 
     <dependencyManagement>
@@ -117,7 +119,12 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-
+            <!--excel操作-->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-spring-boot-starter</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
             <!-- 全局单元测试 -->
             <dependency>
                 <groupId>junit</groupId>
