@@ -2,6 +2,7 @@ package com.veeker.log.domain;
 
 import com.veeker.core.utils.DateUtils;
 import com.veeker.core.utils.JsonUtils;
+import java.io.File;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author ：qiaoliang
@@ -69,6 +71,9 @@ public class Log {
         //参数值
         Object[] objects=joinPoint.getArgs();
         for (int i = 0; i < names.length; i++) {
+            if(objects[i] instanceof MultipartFile){
+                break;
+            }
             map.put(names[i], objects[i]);
         }
         this.setInputParam(JsonUtils.toJson(map));
