@@ -71,10 +71,11 @@ public class Log {
         //参数值
         Object[] objects=joinPoint.getArgs();
         for (int i = 0; i < names.length; i++) {
-            if(objects[i] instanceof MultipartFile){
-                continue;
+            Object pam = objects[i];
+            if(pam instanceof MultipartFile){
+                pam = "[文件]";
             }
-            map.put(names[i], objects[i]);
+            map.put(names[i], pam);
         }
         this.setInputParam(JsonUtils.toJson(map));
     }
