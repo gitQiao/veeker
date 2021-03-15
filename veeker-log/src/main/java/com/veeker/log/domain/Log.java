@@ -72,7 +72,7 @@ public class Log {
         Object[] objects=joinPoint.getArgs();
         for (int i = 0; i < names.length; i++) {
             if(objects[i] instanceof MultipartFile){
-                break;
+                continue;
             }
             map.put(names[i], objects[i]);
         }
