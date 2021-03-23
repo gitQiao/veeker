@@ -38,12 +38,14 @@ public class LogAspect {
     private final ILogOutputService logOutput;
     private Log logs = null;
     private final IOperatorService operatorService;
+    private final LogProperties logProperties;
 
     public LogAspect(LogConfigurerSupport logConfigurerSupport,
                      LogConfigurationAdapter logConfigurationAdapter,
                      LogProperties logProperties,
                      IOperatorService operatorService) {
         this.operatorService = operatorService;
+        this.logProperties = logProperties;
         this.logOutput = logConfigurationAdapter.getLogConfiguration
                 (LogLevelType.valueOf(logProperties.getLevel()));
         this.logConfigurerSupport = logConfigurerSupport;
@@ -63,11 +65,9 @@ public class LogAspect {
      */
     @Before(value = "controllerAspect()")
     public void before(JoinPoint joinPoint) {
-        // 接收到请求，记录请求内容
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = null;
-        if(Objects.nonNull(attributes)){
-            request = attributes.getRequest();
+        HttpServletRequest request = this.getRequest();
+        if(Objects.isNull(request) || this.isExclude(request)){
+            return;
         }
         logs = new Log();
         logs.setCurrUserId(operatorService.operator());
@@ -90,6 +90,10 @@ public class LogAspect {
      */
     @AfterReturning(returning = "ret", pointcut = "controllerAspect()")
     public void doAfterReturning(Object ret) {
+        HttpServletRequest request = this.getRequest();
+        if(Objects.isNull(request) || this.isExclude(request)){
+            return;
+        }
         logs.doAfterReturning(ret);
         logOutput.doAfterReturning(logs);
         logConfigurerSupport.doAfterReturning(logs);
@@ -106,6 +110,10 @@ public class LogAspect {
      */
     @AfterThrowing(value = "controllerAspect()", throwing = "exception")
     public void doAfterThrowing(Exception exception) {
+        HttpServletRequest request = this.getRequest();
+        if(Objects.isNull(request) || this.isExclude(request)){
+            return;
+        }
         logs.doAfterThrowing(exception);
         if(exception instanceof BusinessException){
             logOutput.businessLog(logs);
@@ -129,6 +137,22 @@ public class LogAspect {
         return signature.getMethod();
     }
 
+    /**
+     *  校验排除接口方式是否存在
+     *
+     * @author ：qiaoliang
+     * @param request : 当前请求
+     * @return boolean
+     * @date 2021-03-23 15:30
+     */
+    private boolean isExclude(HttpServletRequest request){
+        return logProperties.getExclude().contains(request.getMethod());
+    }
 
+    private HttpServletRequest getRequest(){
+        // 接收到请求，记录请求内容
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        return Objects.nonNull(attributes)?attributes.getRequest():null;
+    }
 
 }

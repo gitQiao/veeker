@@ -12,7 +12,7 @@
 
     <groupId>com.github.gitqiao</groupId>
     <artifactId>veeker-parent</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.6</version>
 
     <name>veeker-parent</name>
     <packaging>pom</packaging>
@@ -56,6 +56,7 @@
         <module>veeker-mybatis</module>
         <module>veeker-all</module>
         <module>veeker-validation</module>
+        <module>veeker-swagger</module>
     </modules>
 
     <!-- Jar 版本控制 -->
@@ -83,6 +84,11 @@
         <mysql.version>5.1.47</mysql.version>
         <!-- excel操作 -->
         <easypoi.version>4.2.0</easypoi.version>
+        <!-- swagger -->
+        <io.springfox.version>2.9.2</io.springfox.version>
+        <io.swagger>1.5.22</io.swagger>
+        <!-- knife4j -->
+        <knife4j.version>2.0.8</knife4j.version>
     </properties>
 
     <dependencyManagement>
@@ -124,6 +130,33 @@
                 <groupId>cn.afterturn</groupId>
                 <artifactId>easypoi-spring-boot-starter</artifactId>
                 <version>${easypoi.version}</version>
+            </dependency>
+            <!--api生成-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${io.springfox.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mapstruct</groupId>
+                        <artifactId>mapstruct</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${io.swagger}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${io.swagger}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-ui</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
             <!-- 全局单元测试 -->
             <dependency>

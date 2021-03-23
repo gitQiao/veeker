@@ -1,0 +1,45 @@
+{
+  "properties": [
+    {
+      "name": "swagger.enabled",
+      "type": "java.lang.String",
+      "defaultValue": "false",
+      "description": "是否启用swagger,生产环境建议关闭."
+    },
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String",
+      "defaultValue": "接口文档",
+      "description": "swagger 文档标题."
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String",
+      "defaultValue": "接口文档描述",
+      "description": "swagger 文档描述."
+    },
+    {
+      "name": "swagger.name",
+      "type": "java.lang.String",
+      "defaultValue": "乔梁",
+      "description": "swagger 作者."
+    },
+    {
+      "name": "swagger.url",
+      "type": "java.lang.String",
+      "defaultValue": "http://localhost:8080/doc.html",
+      "description": "swagger 作者联系地址."
+    },
+    {
+      "name": "swagger.email",
+      "type": "java.lang.String",
+      "defaultValue": "1224999091@qq.com",
+      "description": "swagger 作者联系email."
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String",
+      "defaultValue": "1.0.0",
+      "description": "swagger 版本."
+    }
+  ] }

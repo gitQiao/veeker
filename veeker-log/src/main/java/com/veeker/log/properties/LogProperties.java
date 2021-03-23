@@ -1,6 +1,7 @@
 package com.veeker.log.properties;
 
 import com.veeker.log.enums.LogLevelType;
+import java.util.List;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -12,6 +13,8 @@ public class LogProperties {
     private boolean enabled = false;
     /**日志级别**/
     private String level = LogLevelType.DEBUG.toString();
+    /**排除日志**/
+    private List<String> exclude;
 
     public boolean isEnabled() {
         return enabled;
@@ -27,5 +30,13 @@ public class LogProperties {
 
     public void setLevel(String level) {
         this.level = level;
+    }
+
+    public List<String> getExclude() {
+        return exclude;
+    }
+
+    public void setExclude(List<String> exclude) {
+        this.exclude = exclude;
     }
 }

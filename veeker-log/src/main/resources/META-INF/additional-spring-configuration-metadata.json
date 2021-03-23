@@ -11,5 +11,11 @@
       "type": "java.lang.String",
       "defaultValue": "DEBUG",
       "description": "系统日志默认输出级别  INFO/DEBUG."
+    },
+    {
+      "name": "log.exclude",
+      "type": "java.lang.String",
+      "defaultValue": null,
+      "description": "排除日志请求方式  GET/DELETE/POST/PUT/PATCH."
     }
   ] }
