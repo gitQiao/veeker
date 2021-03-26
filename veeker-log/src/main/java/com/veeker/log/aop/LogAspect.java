@@ -1,5 +1,6 @@
 package com.veeker.log.aop;
 
+import cn.hutool.core.collection.CollUtil;
 import com.veeker.core.exceptions.BusinessException;
 import com.veeker.log.domain.Log;
 import com.veeker.log.enums.LogLevelType;
@@ -146,7 +147,8 @@ public class LogAspect {
      * @date 2021-03-23 15:30
      */
     private boolean isExclude(HttpServletRequest request){
-        return logProperties.getExclude().contains(request.getMethod());
+        return CollUtil.isNotEmpty(logProperties.getExclude()) || logProperties.getExclude()
+            .contains(request.getMethod());
     }
 
     private HttpServletRequest getRequest(){
