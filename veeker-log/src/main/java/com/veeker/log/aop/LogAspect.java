@@ -147,7 +147,7 @@ public class LogAspect {
      * @date 2021-03-23 15:30
      */
     private boolean isExclude(HttpServletRequest request){
-        return CollUtil.isNotEmpty(logProperties.getExclude()) || logProperties.getExclude()
+        return CollUtil.isEmpty(logProperties.getExclude()) || logProperties.getExclude()
             .contains(request.getMethod());
     }
 
